@@ -1,1 +1,11 @@
-<mat-card>Simple card</mat-card>
+<mat-drawer-container>
+  <mat-drawer mode="side" position="end" opened>Drawer content</mat-drawer>
+  <mat-drawer-content>
+    <div
+      class="map"
+      leaflet
+      [leafletOptions]="options"
+      [leafletLayers]="layers"
+    ></div>
+  </mat-drawer-content>
+</mat-drawer-container>
