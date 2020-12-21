@@ -1,6 +1,10 @@
 <mat-sidenav-container hasBackdrop="false">
-  <mat-sidenav mode="over" position="end" [opened]="!!selectedFeature">
-    {{ selectedFeature | json }}
+  <mat-sidenav
+    mode="over"
+    position="end"
+    [opened]="!!propertiesList && propertiesList.length > 0"
+  >
+    {{ propertiesList | json }}
   </mat-sidenav>
   <mat-sidenav-content>
     <app-map

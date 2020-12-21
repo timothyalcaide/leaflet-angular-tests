@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CampaignComponent implements OnInit {
   geojson$: Observable<GeoJSON.FeatureCollection>;
+  propertiesList: any[];
   selectedFeature: GeoJSON.Feature;
 
   // TODO : get the basemap config with url
@@ -28,10 +29,13 @@ export class CampaignComponent implements OnInit {
 
   ngOnInit(): void {
     this.geojson$ = this.service.getGeoJson();
+    this.propertiesList = [];
   }
 
   onFeature(feature: GeoJSON.Feature): void {
     this.selectedFeature = feature;
+    // TODO add to feature list if click button tooltip
+    this.propertiesList = [...this.propertiesList, feature];
     this.cdr.detectChanges();
   }
 }

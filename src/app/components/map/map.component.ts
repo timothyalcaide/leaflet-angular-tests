@@ -1,11 +1,14 @@
 import {
   Component,
+  ComponentFactoryResolver,
   EventEmitter,
+  Injector,
   Input,
   OnChanges,
   Output,
 } from '@angular/core';
 import { circle, geoJSON, LatLng, Layer, Map, MapOptions } from 'leaflet';
+import { PopupContentComponent } from './../popup-content/popup-content.component';
 
 @Component({
   selector: 'app-map',
@@ -17,10 +20,12 @@ export class MapComponent implements OnChanges {
   @Input() options: MapOptions;
   @Output() selected = new EventEmitter<GeoJSON.Feature>();
   featureSelected: GeoJSON.Feature;
-  layers = [];
   map: Map;
 
-  // TODO : add bind popup with properties (add a component dynamiquely)
+  constructor(
+    private resolver: ComponentFactoryResolver,
+    private injector: Injector
+  ) {}
 
   onMapReady(map: Map): void {
     this.map = map;
@@ -84,6 +89,17 @@ export class MapComponent implements OnChanges {
         mouseout: resetHighlight,
         click: onSelectFeature,
       });
+
+      if (feature.properties.popupContent) {
+        const factory = this.resolver.resolveComponentFactory(
+          PopupContentComponent
+        );
+        const component = factory.create(this.injector);
+        component.instance.feature = feature;
+        component.changeDetectorRef.detectChanges();
+        const popupContent = component.location.nativeElement;
+        layer.bindPopup(popupContent, { offset: [0, -10] });
+      }
     };
 
     const style = (feature: GeoJSON.Feature) => {

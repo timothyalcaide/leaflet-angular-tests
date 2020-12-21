@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app.routing';
 import { MapComponent } from './components/map/map.component';
 import { CampaignComponent } from './containers/campaign/campaign.component';
 import { MaterialModule } from './material.module';
+import { PopupContentComponent } from './components/popup-content/popup-content.component';
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, CampaignComponent],
+  declarations: [AppComponent, MapComponent, CampaignComponent, PopupContentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

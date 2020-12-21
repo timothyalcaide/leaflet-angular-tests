@@ -1,0 +1,8 @@
+<table>
+  <tr *ngFor="let item of properties">
+    <td>{{ item[0] | titlecase }}</td>
+    <td>{{ item[1] }}</td>
+  </tr>
+</table>
+
+<button (click)="onClick()">Add feature</button>

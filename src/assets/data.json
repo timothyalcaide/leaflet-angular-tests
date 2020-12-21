@@ -3,7 +3,20 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -11,12 +24,6 @@
           [3.863035440444946, 43.62317633754435],
           [3.8635718822479244, 43.62281130963431],
           [3.865320682525635, 43.619984209917114]
-        ],
-        "bbox": [
-          3.862241506576538,
-          43.619984209917114,
-          3.865320682525635,
-          43.62382872233125
         ]
       },
       "bbox": [
@@ -48,16 +55,13 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "ALERT",
+        "note": "Attention nie de poule"
+      },
       "geometry": {
         "type": "Point",
-        "coordinates": [3.8831251859664917, 43.61488111374414],
-        "bbox": [
-          3.8831251859664917,
-          43.61488111374414,
-          3.8831251859664917,
-          43.61488111374414
-        ]
+        "coordinates": [3.8831251859664917, 43.61488111374414]
       },
       "bbox": [
         3.8831251859664917,
@@ -68,7 +72,7 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": { "note": "Mettre en place une zone de recouvrement" },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -87,12 +91,6 @@
             [3.8814380764961243, 43.614488848701875],
             [3.88154536485672, 43.61445583618059]
           ]
-        ],
-        "bbox": [
-          3.8813012838363647,
-          43.61445583618059,
-          3.8829991221427917,
-          43.6149918019318
         ]
       },
       "bbox": [
@@ -104,18 +102,25 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "122",
+        "largeur": "5",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "40",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [3.8803195953369136, 43.61502093036839],
           [3.8809633255004883, 43.61571224112195]
-        ],
-        "bbox": [
-          3.8803195953369136,
-          43.61502093036839,
-          3.8809633255004883,
-          43.61571224112195
         ]
       },
       "bbox": [
@@ -127,18 +132,25 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "34",
+        "largeur": "3",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "40",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [3.8793754577636714, 43.61734339229922],
           [3.881285190582275, 43.61927741421613]
-        ],
-        "bbox": [
-          3.8793754577636714,
-          43.61734339229922,
-          3.881285190582275,
-          43.61927741421613
         ]
       },
       "bbox": [
@@ -150,18 +162,25 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "122",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "90",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [3.8750088214874268, 43.618259924496584],
           [3.877090215682983, 43.61959586165927]
-        ],
-        "bbox": [
-          3.8750088214874268,
-          43.618259924496584,
-          3.877090215682983,
-          43.61959586165927
         ]
       },
       "bbox": [
@@ -173,19 +192,26 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "82",
+        "largeur": "4",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "16",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [3.872798681259155, 43.61758417753459],
           [3.8734102249145503, 43.618834691797694],
           [3.8724875450134273, 43.61887352722801]
-        ],
-        "bbox": [
-          3.8724875450134273,
-          43.61758417753459,
-          3.8734102249145503,
-          43.61887352722801
         ]
       },
       "bbox": [
@@ -197,7 +223,20 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -205,12 +244,6 @@
           [3.8678741455078125, 43.62289674189701],
           [3.8684856891632085, 43.621576411549384],
           [3.869912624359131, 43.62192591358096]
-        ],
-        "bbox": [
-          3.8666832447052,
-          43.621576411549384,
-          3.869912624359131,
-          43.62289674189701
         ]
       },
       "bbox": [
@@ -225,13 +258,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.8709747791290283, 43.625242198415826],
-        "bbox": [
-          3.8709747791290283,
-          43.625242198415826,
-          3.8709747791290283,
-          43.625242198415826
-        ]
+        "coordinates": [3.8709747791290283, 43.625242198415826]
       },
       "bbox": [
         3.8709747791290283,
@@ -245,13 +272,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.8660502433776855, 43.62389085384649],
-        "bbox": [
-          3.8660502433776855,
-          43.62389085384649,
-          3.8660502433776855,
-          43.62389085384649
-        ]
+        "coordinates": [3.8660502433776855, 43.62389085384649]
       },
       "bbox": [
         3.8660502433776855,
@@ -262,18 +283,25 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [3.8844716548919673, 43.61612391678392],
           [3.8810545206069946, 43.61793758637576]
-        ],
-        "bbox": [
-          3.8810545206069946,
-          43.61612391678392,
-          3.8844716548919673,
-          43.61793758637576
         ]
       },
       "bbox": [
@@ -288,13 +316,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.8760924339294434, 43.61653558962753],
-        "bbox": [
-          3.8760924339294434,
-          43.61653558962753,
-          3.8760924339294434,
-          43.61653558962753
-        ]
+        "coordinates": [3.8760924339294434, 43.61653558962753]
       },
       "bbox": [
         3.8760924339294434,
@@ -308,13 +330,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.884096145629883, 43.62001527766939],
-        "bbox": [
-          3.884096145629883,
-          43.62001527766939,
-          3.884096145629883,
-          43.62001527766939
-        ]
+        "coordinates": [3.884096145629883, 43.62001527766939]
       },
       "bbox": [
         3.884096145629883,
@@ -328,13 +344,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.8762640953063965, 43.62055896073537],
-        "bbox": [
-          3.8762640953063965,
-          43.62055896073537,
-          3.8762640953063965,
-          43.62055896073537
-        ]
+        "coordinates": [3.8762640953063965, 43.62055896073537]
       },
       "bbox": [
         3.8762640953063965,
@@ -348,13 +358,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.888602256774902, 43.62361902799325],
-        "bbox": [
-          3.888602256774902,
-          43.62361902799325,
-          3.888602256774902,
-          43.62361902799325
-        ]
+        "coordinates": [3.888602256774902, 43.62361902799325]
       },
       "bbox": [
         3.888602256774902,
@@ -365,7 +369,20 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -373,12 +390,6 @@
           [3.8838386535644536, 43.62622850544699],
           [3.8874006271362305, 43.626290634481954],
           [3.88967514038086, 43.62688085711131]
-        ],
-        "bbox": [
-          3.8793754577636714,
-          43.6256382764122,
-          3.88967514038086,
-          43.62688085711131
         ]
       },
       "bbox": [
@@ -390,7 +401,20 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -403,12 +427,6 @@
           [3.877508640289307, 43.625218899628905],
           [3.8771975040435787, 43.625894560783934],
           [3.877240419387818, 43.626080948731605]
-        ],
-        "bbox": [
-          3.8771545886993404,
-          43.62077643258518,
-          3.8775408267974854,
-          43.626080948731605
         ]
       },
       "bbox": [
@@ -420,7 +438,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "note": "Mettre en place une zone de recouvrement"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -434,12 +454,6 @@
             [3.8717526197433476, 43.62470244086646],
             [3.8714253902435307, 43.6245354645279]
           ]
-        ],
-        "bbox": [
-          3.8714253902435307,
-          43.62316468775167,
-          3.873034715652466,
-          43.62470244086646
         ]
       },
       "bbox": [
@@ -451,7 +465,20 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -467,17 +494,24 @@
           3.8750946521759033,
           43.62474127250662
         ]
-      },
-      "bbox": [
-        3.8743221759796147,
-        43.62417044487037,
-        3.8750946521759033,
-        43.62474127250662
-      ]
+      }
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -488,12 +522,6 @@
           [3.878602981567383, 43.62122690748603],
           [3.879944086074829, 43.62159194501617],
           [3.881961107254028, 43.622127847162005]
-        ],
-        "bbox": [
-          3.8763499259948726,
-          43.618648281383116,
-          3.881961107254028,
-          43.622127847162005
         ]
       },
       "bbox": [
@@ -505,7 +533,20 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -513,12 +554,6 @@
           [3.8834631443023677, 43.62233754670136],
           [3.8843107223510747, 43.62256277872519],
           [3.885812759399414, 43.62319187059774]
-        ],
-        "bbox": [
-          3.882604837417603,
-          43.6221899804351,
-          3.885812759399414,
-          43.62319187059774
         ]
       },
       "bbox": [
@@ -530,19 +565,26 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "type": "SECTION",
+        "layerGroupId": "1",
+        "longueur": "152",
+        "largeur": "6",
+        "voie": "Rue Alphonse daudet",
+        "revetement": "bitume",
+        "stateNote": "70",
+        "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
+      },
+      "style": {
+        "weight": "5",
+        "fillOpacity": "0.8"
+      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [3.882561922073364, 43.62318410407154],
           [3.882604837417603, 43.62280354305895],
           [3.8830018043518066, 43.62184047993866]
-        ],
-        "bbox": [
-          3.882561922073364,
-          43.62184047993866,
-          3.8830018043518066,
-          43.62318410407154
         ]
       },
       "bbox": [
@@ -557,13 +599,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [-107.25420174268089, 45.122094018912854],
-        "bbox": [
-          -107.25420174268089,
-          45.122094018912854,
-          -107.25420174268089,
-          45.122094018912854
-        ]
+        "coordinates": [-107.25420174268089, 45.122094018912854]
       },
       "bbox": [
         -107.25420174268089,
@@ -577,13 +613,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [127.56809924156967, -12.19063023301118],
-        "bbox": [
-          127.56809924156967,
-          -12.19063023301118,
-          127.56809924156967,
-          -12.19063023301118
-        ]
+        "coordinates": [127.56809924156967, -12.19063023301118]
       },
       "bbox": [
         127.56809924156967,
@@ -597,13 +627,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [25.057460447594018, -24.587045405546885],
-        "bbox": [
-          25.057460447594018,
-          -24.587045405546885,
-          25.057460447594018,
-          -24.587045405546885
-        ]
+        "coordinates": [25.057460447594018, -24.587045405546885]
       },
       "bbox": [
         25.057460447594018,
@@ -617,13 +641,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [74.84214918540417, -70.69777357046073],
-        "bbox": [
-          74.84214918540417,
-          -70.69777357046073,
-          74.84214918540417,
-          -70.69777357046073
-        ]
+        "coordinates": [74.84214918540417, -70.69777357046073]
       },
       "bbox": [
         74.84214918540417,
@@ -637,13 +655,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [-137.03132527070073, -50.382265645698965],
-        "bbox": [
-          -137.03132527070073,
-          -50.382265645698965,
-          -137.03132527070073,
-          -50.382265645698965
-        ]
+        "coordinates": [-137.03132527070073, -50.382265645698965]
       },
       "bbox": [
         -137.03132527070073,
@@ -657,13 +669,7 @@
       "properties": {},
       "geometry": {
         "type": "Point",
-        "coordinates": [3.8771438598632812, 43.621537577864906],
-        "bbox": [
-          3.8771438598632812,
-          43.621537577864906,
-          3.8771438598632812,
-          43.621537577864906
-        ]
+        "coordinates": [3.8771438598632812, 43.621537577864906]
       },
       "bbox": [
         3.8771438598632812,
