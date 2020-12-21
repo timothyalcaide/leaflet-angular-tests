@@ -3,19 +3,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './components/map/map.component';
+import { CampaignComponent } from './containers/campaign/campaign.component';
 import { MaterialModule } from './material.module';
 
 @NgModule({
-  declarations: [AppComponent, MapComponent],
+  declarations: [AppComponent, MapComponent, CampaignComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     LeafletModule,
-    BrowserAnimationsModule,
+    LeafletDrawModule,
     MaterialModule,
     HttpClientModule,
   ],

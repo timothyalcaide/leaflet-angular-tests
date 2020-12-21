@@ -1,0 +1,8 @@
+<div
+  id="map"
+  leaflet
+  [leafletOptions]="options"
+  (leafletMapReady)="onMapReady($event)"
+>
+  <div *ngFor="let l of layers" [leafletLayer]="l"></div>
+</div>
