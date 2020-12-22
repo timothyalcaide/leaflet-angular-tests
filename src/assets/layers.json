@@ -8,17 +8,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 39,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -87,17 +83,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "122",
-          "largeur": "5",
+          "layerId": 1,
+          "longueur": 122,
+          "largeur": 5,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "40",
+          "stateNote": 35,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -117,17 +109,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "34",
-          "largeur": "3",
+          "layerId": 1,
+          "longueur": 34,
+          "largeur": 3,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "40",
+          "stateNote": 20,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -147,17 +135,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "122",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 122,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "90",
+          "stateNote": 90,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -177,17 +161,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "82",
-          "largeur": "4",
+          "layerId": 1,
+          "longueur": 82,
+          "largeur": 4,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "16",
+          "stateNote": 16,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -208,17 +188,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 70,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -240,17 +216,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 92,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -270,17 +242,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 44,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -302,17 +270,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 12,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -366,17 +330,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 70,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -399,17 +359,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 72,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -434,17 +390,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 88,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",
@@ -466,17 +418,13 @@
         "type": "Feature",
         "properties": {
           "type": "SECTION",
-          "layerId": "1",
-          "longueur": "152",
-          "largeur": "6",
+          "layerId": 1,
+          "longueur": 152,
+          "largeur": 6,
           "voie": "Rue Alphonse daudet",
           "revetement": "bitume",
-          "stateNote": "70",
+          "stateNote": 35,
           "popupContent": ["longueur", "largeur", "revetement", "stateNote"]
-        },
-        "style": {
-          "weight": "5",
-          "fillOpacity": "0.8"
         },
         "geometry": {
           "type": "LineString",

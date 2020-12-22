@@ -17,6 +17,7 @@ import {
   Map,
   MapOptions,
 } from 'leaflet';
+import { setSectionColor } from './../../utils/section.util';
 import { PopupContentComponent } from './../popup-content/popup-content.component';
 
 @Component({
@@ -132,12 +133,17 @@ export class MapComponent implements OnChanges {
       } else {
         // Load default style
         const type = feature.geometry.type;
+        const prop = feature.properties;
         // TODO : set default style
         switch (type) {
           case 'Point':
           case 'MultiPoint':
             break;
           case 'LineString':
+            if (prop.type === 'SECTION') {
+              return setSectionColor(prop.stateNote);
+            }
+            break;
           case 'MultiLineString':
             return {
               color: '#ff7800',
@@ -146,7 +152,6 @@ export class MapComponent implements OnChanges {
               lineCap: 'round',
               lineJoin: 'round',
             };
-            break;
           case 'Polygon':
           case 'MultiPolygon':
             break;

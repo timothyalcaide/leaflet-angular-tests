@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { Campaign, ID } from '../model/dto.model';
+import { Campaign, ID } from '../model/shared.model';
 import { LoggerService } from './logger.service';
 
 @Injectable({

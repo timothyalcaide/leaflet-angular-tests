@@ -17,3 +17,10 @@ export interface Intervention {
   dateEnd: Date;
 }
 
+export enum ColorState {
+  VERY_GOOD = '#00FF00',
+  GOOD = '#FFFF00',
+  MEDIUM = '#FFA500',
+  BAD = '#FF0000',
+  VERY_BAD = '#000000',
+}
