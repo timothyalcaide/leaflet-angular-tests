@@ -5,10 +5,8 @@
 export const environment = {
   production: false,
   mapbox: {
-    api: {
-      token:
-        'pk.eyJ1IjoidGltb3RoeTM0IiwiYSI6ImNraWVkcTdyaTB5MjAyc3JzOTRyYWx0cHMifQ.ta2cN4vcYUu8TOlI0fAc2Q',
-    },
+    api:
+      'pk.eyJ1IjoidGltb3RoeTM0IiwiYSI6ImNraWVkcTdyaTB5MjAyc3JzOTRyYWx0cHMifQ.ta2cN4vcYUu8TOlI0fAc2Q',
   },
 };
 

@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { latLng, tileLayer } from 'leaflet';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-campaign',
@@ -15,23 +16,27 @@ export class CampaignComponent implements OnInit {
 
   // TODO : get the basemap config with url
   // campagn/1  => map/1
+
+  mapboxBase = tileLayer(
+    `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${environment.mapbox.api}`,
+    {
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      maxZoom: 20,
+    }
+  );
+
   options = {
-    layers: [
-      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-      }),
-    ],
+    layers: [this.mapboxBase],
     zoom: 14,
     center: latLng(43.621537577864906, 3.8771438598632812),
   };
 
   baseLayers = {
+    Mapbox: this.mapboxBase,
     'Open Street Map': tileLayer(
       'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      { maxZoom: 19 }
-    ),
-    'Open Cycle Map': tileLayer(
-      'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
       { maxZoom: 19 }
     ),
   };
