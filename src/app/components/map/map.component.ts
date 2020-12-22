@@ -7,7 +7,16 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
-import { circle, geoJSON, LatLng, Layer, Map, MapOptions } from 'leaflet';
+import {
+  circle,
+  control,
+  geoJSON,
+  LatLng,
+  Layer,
+  layerGroup,
+  Map,
+  MapOptions,
+} from 'leaflet';
 import { PopupContentComponent } from './../popup-content/popup-content.component';
 
 @Component({
@@ -16,8 +25,10 @@ import { PopupContentComponent } from './../popup-content/popup-content.componen
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnChanges {
-  @Input() data: GeoJSON.FeatureCollection;
+  @Input() layers: GeoJSON.FeatureCollection[];
+  @Input() baseLayers: { [name: string]: Layer }[];
   @Input() options: MapOptions;
+  @Input() control: any;
   @Output() selected = new EventEmitter<GeoJSON.Feature>();
   featureSelected: GeoJSON.Feature;
   map: Map;
@@ -32,12 +43,25 @@ export class MapComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    if (this.map) {
-      this.loadLayers();
+    if (this.map && this.layers) {
+      this.loadLayers(this.layers);
     }
   }
 
-  private loadLayers(): void {
+  // TODO create interface overlays (geojson feature collection with metadata (id and name) )
+  private loadLayers(layers: any): void {
+    let overlays = {};
+
+    layers.map((layer) => {
+      const group = layerGroup();
+      overlays = { ...overlays, [layer.name]: group };
+      return this.map.addLayer(group.addLayer(this.generateLayerGroup(layer)));
+    });
+
+    control.layers(this.baseLayers as any, overlays).addTo(this.map);
+  }
+
+  private generateLayerGroup(layer: any): any {
     let geojson: any;
 
     const onSelectFeature = (e: any) => {
@@ -48,11 +72,11 @@ export class MapComponent implements OnChanges {
     };
 
     const highlightFeature = (e) => {
-      const layer = e.target;
-      layer.setStyle({
-        weight: 5,
+      e.target.setStyle({
+        weight: 8,
+        fillColor: '#FF000',
         color: '#666',
-        fillOpacity: 0.7,
+        fillOpacity: 0.6,
       });
     };
 
@@ -83,8 +107,8 @@ export class MapComponent implements OnChanges {
       }
     };
 
-    const onEachFeature = (feature: GeoJSON.Feature, layer: Layer) => {
-      layer.on({
+    const onEachFeature = (feature: GeoJSON.Feature, l: Layer) => {
+      l.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
         click: onSelectFeature,
@@ -98,7 +122,7 @@ export class MapComponent implements OnChanges {
         component.instance.feature = feature;
         component.changeDetectorRef.detectChanges();
         const popupContent = component.location.nativeElement;
-        layer.bindPopup(popupContent, { offset: [0, -10] });
+        l.bindPopup(popupContent, { offset: [0, -10] });
       }
     };
 
@@ -107,15 +131,25 @@ export class MapComponent implements OnChanges {
         return feature.properties.style;
       } else {
         // Load default style
-        // TODO switch(type).. for default style all geometries
         const type = feature.geometry.type;
-
-        if (type === 'LineString') {
-          return {
-            color: '#ff7800',
-            weight: 5,
-            opacity: 0.65,
-          };
+        // TODO : set default style
+        switch (type) {
+          case 'Point':
+          case 'MultiPoint':
+            break;
+          case 'LineString':
+          case 'MultiLineString':
+            return {
+              color: '#ff7800',
+              weight: 5,
+              opacity: 0.65,
+              lineCap: 'round',
+              lineJoin: 'round',
+            };
+            break;
+          case 'Polygon':
+          case 'MultiPolygon':
+            break;
         }
       }
     };
@@ -130,13 +164,13 @@ export class MapComponent implements OnChanges {
       }
     };
 
-    geojson = geoJSON(this.data, {
+    geojson = geoJSON(layer, {
       onEachFeature,
       pointToLayer,
       style,
       filter,
     });
 
-    this.map.addLayer(geojson);
+    return geojson;
   }
 }

@@ -23,6 +23,8 @@
     "@angular/router": "~10.1.5",
     "@asymmetrik/ngx-leaflet": "^8.1.0",
     "@asymmetrik/ngx-leaflet-draw": "^7.0.0",
+    "@ngxs/devtools-plugin": "^3.6.2-dev.master-eaa5d86",
+    "@ngxs/store": "^3.6.2-dev.master-eaa5d86",
     "leaflet": "^1.7.1",
     "leaflet-draw": "^1.0.4",
     "ramda": "^0.27.1",

@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./campaign.component.scss'],
 })
 export class CampaignComponent implements OnInit {
-  geojson$: Observable<GeoJSON.FeatureCollection>;
+  layers$: Observable<GeoJSON.FeatureCollection[]>;
   propertiesList: any[];
   selectedFeature: GeoJSON.Feature;
 
@@ -25,10 +25,21 @@ export class CampaignComponent implements OnInit {
     center: latLng(43.621537577864906, 3.8771438598632812),
   };
 
+  baseLayers = {
+    'Open Street Map': tileLayer(
+      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { maxZoom: 19 }
+    ),
+    'Open Cycle Map': tileLayer(
+      'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
+      { maxZoom: 19 }
+    ),
+  };
+
   constructor(private service: ApiService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.geojson$ = this.service.getGeoJson();
+    this.layers$ = this.service.getLayers();
     this.propertiesList = [];
   }
 

@@ -1,6 +1,6 @@
 <mat-sidenav-container hasBackdrop="false">
   <mat-sidenav
-    mode="over"
+    mode="side"
     position="end"
     [opened]="!!propertiesList && propertiesList.length > 0"
   >
@@ -9,7 +9,8 @@
   <mat-sidenav-content>
     <app-map
       [options]="options"
-      [data]="geojson$ | async"
+      [layers]="layers$ | async"
+      [baseLayers]="baseLayers"
       (selected)="onFeature($event)"
     ></app-map>
   </mat-sidenav-content>
