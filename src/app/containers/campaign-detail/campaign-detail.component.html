@@ -1,0 +1,17 @@
+<mat-sidenav-container hasBackdrop="false">
+  <mat-sidenav
+    mode="side"
+    position="end"
+    [opened]="!!propertiesList && propertiesList.length > 0"
+  >
+    {{ propertiesList | json }}
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-map
+      [config]="config"
+      [overlays]="overlays$ | async"
+      [baseLayers]="baselayers$ | async"
+      (selected)="onFeature($event)"
+    ></app-map>
+  </mat-sidenav-content>
+</mat-sidenav-container>

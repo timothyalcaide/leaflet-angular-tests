@@ -15,9 +15,10 @@ import {
   Layer,
   layerGroup,
   Map,
-  MapOptions,
 } from 'leaflet';
-import { setSectionColor } from './../../utils/section.util';
+import { Overlay } from '../../model/shared.model';
+import { setSectionColor } from '../../utils/';
+import { BaseLayer, Config } from './../../model/shared.model';
 import { PopupContentComponent } from './../popup-content/popup-content.component';
 
 @Component({
@@ -26,9 +27,9 @@ import { PopupContentComponent } from './../popup-content/popup-content.componen
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnChanges {
-  @Input() layers: GeoJSON.FeatureCollection[];
-  @Input() baseLayers: { [name: string]: Layer }[];
-  @Input() options: MapOptions;
+  @Input() overlays: Overlay[];
+  @Input() baseLayers: BaseLayer[];
+  @Input() config: Config;
   @Input() control: any;
   @Output() selected = new EventEmitter<GeoJSON.Feature>();
   featureSelected: GeoJSON.Feature;
@@ -44,22 +45,23 @@ export class MapComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    if (this.map && this.layers) {
-      this.loadLayers(this.layers);
+    if (this.map && this.overlays && this.baseLayers) {
+      this.loadOverlaysAndAddControl(this.overlays);
     }
   }
 
-  // TODO create interface overlays (geojson feature collection with metadata (id and name) )
-  private loadLayers(layers: any): void {
+  private loadOverlaysAndAddControl(os: Overlay[]): void {
     let overlays = {};
 
-    layers.map((layer) => {
+    os.map((layer) => {
       const group = layerGroup();
       overlays = { ...overlays, [layer.name]: group };
       return this.map.addLayer(group.addLayer(this.generateLayerGroup(layer)));
     });
 
-    control.layers(this.baseLayers as any, overlays).addTo(this.map);
+    // console.log(convertBaselayersForLeafletControl(this.baseLayers));
+
+    control.layers(null, overlays).addTo(this.map);
   }
 
   private generateLayerGroup(layer: any): any {

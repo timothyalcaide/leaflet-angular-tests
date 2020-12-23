@@ -1,0 +1,22 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Mapbox",
+    "urlTemplate": "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=",
+    "token": "pk.eyJ1IjoidGltb3RoeTM0IiwiYSI6ImNraWVkcTdyaTB5MjAyc3JzOTRyYWx0cHMifQ.ta2cN4vcYUu8TOlI0fAc2Q",
+    "options": {
+      "id": "mapbox/streets-v11",
+      "tileSize": 512,
+      "zoomOffset": -1,
+      "maxZoom": 20
+    }
+  },
+  "2": {
+    "id": 2,
+    "name": "Open Street Map",
+    "urlTemplate": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "options": {
+      "maxZoom": 19
+    }
+  }
+}

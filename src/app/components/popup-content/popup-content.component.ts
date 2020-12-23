@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { filteredObjectByKeys } from 'src/app/utils/shared.utils';
 
 @Component({
   selector: 'app-popup-content',
@@ -12,23 +13,15 @@ export class PopupContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.properties = Object.entries(
-      this.filteredObjectByKeys(this.feature.properties)
+      filteredObjectByKeys(
+        this.feature.properties,
+        this.feature.properties.popupContent
+      )
     );
   }
 
   onClick(): void {
     this.add.emit(this.feature);
     console.log('TODO: add feature t the propertit list tab');
-  }
-
-  private filteredObjectByKeys(raw: any): any {
-    const allowed = raw.popupContent;
-    const filtered = Object.keys(raw)
-      .filter((key) => allowed.includes(key))
-      .reduce((obj, key) => {
-        obj[key] = raw[key];
-        return obj;
-      }, {});
-    return filtered;
   }
 }

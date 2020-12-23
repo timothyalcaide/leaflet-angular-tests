@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let campaign of campaignlist$ | async">
+    <a [routerLink]="campaign.id">{{ campaign.name }}</a>
+  </li>
+</ul>

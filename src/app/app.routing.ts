@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CampaignComponent } from './containers/campaign/campaign.component';
+import {
+  CampaignResolver,
+  MapSmallResolver,
+} from './resolvers/campaign.resolvers';
+import { CampaignDetailComponent } from './containers/campaign-detail/campaign-detail.component';
+import { CampaignListComponent } from './containers/campaign-list/campaign-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CampaignComponent,
+    redirectTo: 'campaign',
+    pathMatch: 'full',
+  },
+  {
+    path: 'campaign',
+    component: CampaignListComponent,
+  },
+  {
+    path: 'campaign/:id',
+    component: CampaignDetailComponent,
+    resolve: { campaign: CampaignResolver, mapSmall: MapSmallResolver },
   },
 ];
 

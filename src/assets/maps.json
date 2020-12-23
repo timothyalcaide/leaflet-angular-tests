@@ -1,0 +1,58 @@
+{
+  "1": {
+    "id": 1,
+    "config": {
+      "layers": {
+        "urlTemplate": "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=",
+        "token": "pk.eyJ1IjoidGltb3RoeTM0IiwiYSI6ImNraWVkcTdyaTB5MjAyc3JzOTRyYWx0cHMifQ.ta2cN4vcYUu8TOlI0fAc2Q",
+        "options": {
+          "id": "mapbox/streets-v11",
+          "tileSize": 512,
+          "zoomOffset": -1,
+          "maxZoom": 20
+        }
+      },
+      "zoom": 14,
+      "center": { "lat": 43.621537577864906, "lng": 3.8771438598632812 },
+      "boxZoom": true
+    },
+    "overlayIds": ["3", "2"],
+    "baseLayerIds": ["1", "2"]
+  },
+  "2": {
+    "id": 2,
+    "config": {
+      "layers": {
+        "urlTemplate": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "options": {
+          "maxZoom": 19
+        }
+      },
+      "zoom": 9,
+      "center": { "lat": 44.6898431722, "lng": 5.2119667947 },
+      "boxZoom": false
+    },
+    "overlayIds": ["1"],
+    "baseLayerIds": ["1", "2"]
+  },
+  "3": {
+    "id": 3,
+    "config": {
+      "layers": {
+        "urlTemplate": "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=",
+        "token": "pk.eyJ1IjoidGltb3RoeTM0IiwiYSI6ImNraWVkcTdyaTB5MjAyc3JzOTRyYWx0cHMifQ.ta2cN4vcYUu8TOlI0fAc2Q",
+        "options": {
+          "id": "mapbox/streets-v11",
+          "tileSize": 512,
+          "zoomOffset": -1,
+          "maxZoom": 20
+        }
+      },
+      "zoom": 10,
+      "center": { "lat": 44.7920352363, "lng": 5.1599254626 },
+      "boxZoom": false
+    },
+    "overlayIds": ["2", "3", "4"],
+    "baseLayerIds": ["1", "2"]
+  }
+}
