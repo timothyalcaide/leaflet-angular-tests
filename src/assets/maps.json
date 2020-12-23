@@ -3,10 +3,8 @@
     "id": 1,
     "config": {
       "layers": {
-        "urlTemplate": "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=",
-        "token": "pk.eyJ1IjoidGltb3RoeTM0IiwiYSI6ImNraWVkcTdyaTB5MjAyc3JzOTRyYWx0cHMifQ.ta2cN4vcYUu8TOlI0fAc2Q",
+        "urlTemplate": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
         "options": {
-          "id": "mapbox/streets-v11",
           "tileSize": 512,
           "zoomOffset": -1,
           "maxZoom": 20
@@ -54,7 +52,7 @@
       "center": { "lat": 44.7920352363, "lng": 5.1599254626 },
       "boxZoom": false
     },
-    "overlayIds": ["2", "3", "4"],
+    "overlayIds": ["4"],
     "baseLayerIds": ["1", "2"]
   }
 }

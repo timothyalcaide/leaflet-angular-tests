@@ -60,6 +60,8 @@ export interface Config {
   scrollWheelZoom?: boolean;
   smoothWheelZoom?: boolean;
   smoothSensitivity?: number;
+  tileSize?: number;
+  zoomOffset?: number;
 }
 
 export interface Overlay extends GeoJSON.FeatureCollection {

@@ -46,7 +46,7 @@ export class CampaignDetailComponent implements OnInit {
 
     this.overlays$ = this.service.getOverlays(this.mapSmall.overlayIds);
     this.baselayers$ = this.service.getBaselayers(this.mapSmall.baseLayerIds);
-    this.baselayers$.subscribe((p) => console.log(p));
+
     this.propertiesList = [];
   }
 
