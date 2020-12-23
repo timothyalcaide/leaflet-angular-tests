@@ -16,6 +16,7 @@ import {
   layerGroup,
   Map,
 } from 'leaflet';
+import 'leaflet.smoothwheelzoom';
 import { Overlay } from '../../model/shared.model';
 import { setSectionColor } from '../../utils/';
 import { BaseLayer, Config } from './../../model/shared.model';

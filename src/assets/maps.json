@@ -14,7 +14,9 @@
       },
       "zoom": 14,
       "center": { "lat": 43.621537577864906, "lng": 3.8771438598632812 },
-      "boxZoom": true
+      "boxZoom": true,
+      "zoomDelta": 0.25,
+      "zoomSnap": 0.5
     },
     "overlayIds": ["3", "2"],
     "baseLayerIds": ["1", "2"]

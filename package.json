@@ -27,6 +27,7 @@
     "@ngxs/store": "^3.6.2-dev.master-eaa5d86",
     "leaflet": "^1.7.1",
     "leaflet-draw": "^1.0.4",
+    "leaflet.smoothwheelzoom": "git+https://github.com/timothyalcaide/Leaflet.SmoothWheelZoom.git",
     "ramda": "^0.27.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

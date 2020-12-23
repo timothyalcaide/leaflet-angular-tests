@@ -57,6 +57,9 @@ export interface Config {
   layers: BaseLayer; // "s" of layers because of leaflet
   minZoom?: number;
   maxZoom?: number;
+  scrollWheelZoom?: boolean;
+  smoothWheelZoom?: boolean;
+  smoothSensitivity?: number;
 }
 
 export interface Overlay extends GeoJSON.FeatureCollection {

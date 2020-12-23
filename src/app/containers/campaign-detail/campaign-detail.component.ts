@@ -34,7 +34,15 @@ export class CampaignDetailComponent implements OnInit {
   ngOnInit(): void {
     this.campaign = this.route.snapshot.data.campaign;
     this.mapSmall = this.route.snapshot.data.mapSmall;
-    this.config = convertConfigToLeaflet(this.mapSmall.config);
+    const conf = convertConfigToLeaflet(this.mapSmall.config);
+
+    // add params for smooth zoom
+    this.config = {
+      ...conf,
+      scrollWheelZoom: false,
+      smoothWheelZoom: true,
+      smoothSensitivity: 2,
+    };
 
     this.overlays$ = this.service.getOverlays(this.mapSmall.overlayIds);
     this.baselayers$ = this.service.getBaselayers(this.mapSmall.baseLayerIds);
