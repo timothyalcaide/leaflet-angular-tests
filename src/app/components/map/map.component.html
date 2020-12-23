@@ -3,4 +3,8 @@
   leaflet
   [leafletOptions]="config"
   (leafletMapReady)="onMapReady($event)"
-></div>
+  (leafletMapZoomEnd)="onUpdateConfigMap()"
+  (leafletMapMoveEnd)="onUpdateConfigMap()"
+>
+  <div *ngFor="let l of layers" [leafletLayer]="l"></div>
+</div>

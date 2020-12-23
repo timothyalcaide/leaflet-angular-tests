@@ -7,15 +7,7 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
-import {
-  circle,
-  control,
-  geoJSON,
-  LatLng,
-  Layer,
-  layerGroup,
-  Map,
-} from 'leaflet';
+import { circle, geoJSON, LatLng, Layer, layerGroup, Map } from 'leaflet';
 import 'leaflet.smoothwheelzoom';
 import { Overlay } from '../../model/shared.model';
 import { setSectionColor } from '../../utils/';
@@ -31,10 +23,10 @@ export class MapComponent implements OnChanges {
   @Input() overlays: Overlay[];
   @Input() baseLayers: BaseLayer[];
   @Input() config: Config;
-  @Input() control: any;
   @Output() selected = new EventEmitter<GeoJSON.Feature>();
   featureSelected: GeoJSON.Feature;
   map: Map;
+  layers: Layer[];
 
   constructor(
     private resolver: ComponentFactoryResolver,
@@ -47,22 +39,29 @@ export class MapComponent implements OnChanges {
 
   ngOnChanges(): void {
     if (this.map && this.overlays && this.baseLayers) {
-      this.loadOverlaysAndAddControl(this.overlays);
+      this.layers = this.loadOverlaysAndAddControl(this.overlays);
+      console.log(this.layers);
     }
   }
 
-  private loadOverlaysAndAddControl(os: Overlay[]): void {
+  onUpdateConfigMap(): Partial<Config> {
+    const center = this.map.getCenter();
+    const zoom = this.map.getZoom();
+    // TODO Add it to the store and merge with initial config to get that config after navigation
+    console.log({ zoom, center });
+    return { zoom, center };
+  }
+
+  private loadOverlaysAndAddControl(os: Overlay[]): Layer[] {
     let overlays = {};
 
     os.map((layer) => {
       const group = layerGroup();
       overlays = { ...overlays, [layer.name]: group };
-      return this.map.addLayer(group.addLayer(this.generateLayerGroup(layer)));
+      return group.addLayer(this.generateLayerGroup(layer));
     });
 
-    // console.log(convertBaselayersForLeafletControl(this.baseLayers));
-
-    control.layers(null, overlays).addTo(this.map);
+    return Object.values(overlays);
   }
 
   private generateLayerGroup(layer: any): any {
