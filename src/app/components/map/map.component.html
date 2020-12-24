@@ -6,5 +6,13 @@
   (leafletMapZoomEnd)="onUpdateConfigMap()"
   (leafletMapMoveEnd)="onUpdateConfigMap()"
 >
+  <ng-container *ngIf="mode === 'edit'">
+    <div
+      leafletDraw
+      [leafletDrawOptions]="drawOptions"
+      (leafletDrawCreated)="onDrawCreated($event)"
+    ></div>
+    <div [leafletLayer]="drawItems"></div>
+  </ng-container>
   <div *ngFor="let l of layers" [leafletLayer]="l"></div>
 </div>

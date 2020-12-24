@@ -7,6 +7,7 @@ import {
   Campaign,
   Config,
   MapSmall,
+  Mode,
   Overlay,
 } from '../../model/shared.model';
 import { convertConfigToLeaflet } from '../../utils/leaflet.utils';
@@ -23,10 +24,13 @@ export class CampaignDetailComponent implements OnInit {
   campaign: Campaign;
   mapSmall: MapSmall;
   config: Config;
-  canAddFeature = true;
+  overlayName: string;
 
   /////
   featureList: any[];
+  canAddFeature = true;
+  MODE = Mode.Edit;
+  overlayInCreation: Overlay;
 
   constructor(
     private service: ApiService,
@@ -58,6 +62,12 @@ export class CampaignDetailComponent implements OnInit {
     this.cdr.detectChanges();
   }
 
+  layerCreation(overlay: Overlay): void {
+    console.log(overlay);
+    this.overlayInCreation = overlay;
+    this.cdr.detectChanges();
+  }
+
   onAddFeature(feature: GeoJSON.Feature): void {
     if (this.canAddFeature) {
       this.featureList.push(feature);
@@ -69,5 +79,9 @@ export class CampaignDetailComponent implements OnInit {
   onClearFeatureList(): void {
     this.featureList = [];
     this.cdr.detectChanges();
+  }
+
+  onChangeMode(mode: Mode): void {
+    this.MODE = mode;
   }
 }

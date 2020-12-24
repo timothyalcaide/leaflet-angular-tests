@@ -3,7 +3,7 @@
     "id": 1,
     "config": {
       "layers": {
-        "urlTemplate": "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
+        "urlTemplate": "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
         "options": {
           "tileSize": 512,
           "zoomOffset": -1,

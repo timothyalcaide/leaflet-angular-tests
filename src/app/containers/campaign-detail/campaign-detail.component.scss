@@ -24,3 +24,9 @@ mat-sidenav-content {
   height: calc(100vh);
   padding: 1.5rem;
 }
+
+.selected {
+  padding: 10px;
+  color: #999;
+  display: inline-block;
+}

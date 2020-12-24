@@ -4,14 +4,28 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="infos">
-      <div class="feature">
-        <h3>Feature</h3>
-        <ul>
-          <li>Selected: {{ selectedFeature?.properties | json }}</li>
-          <li>List length: {{ featureList.length }}</li>
-        </ul>
+      <!-- MODE  -->
+      <div>
+        <h3>Mode</h3>
+        <p>{{ MODE | uppercase }} mode</p>
+        Switch to :
+        <button *ngIf="MODE !== 'read'" (click)="onChangeMode('read')">
+          Read mode
+        </button>
+        <button *ngIf="MODE !== 'edit'" (click)="onChangeMode('edit')">
+          Edit mode
+        </button>
       </div>
-      <div class="actions">
+      <!-- Selection  -->
+      <div>
+        <h3>Selection</h3>
+        <p>
+          Selected feature:
+          <span class="selected">{{ selectedFeature?.properties | json }}</span>
+        </p>
+        <p>Selected feature list length: {{ featureList.length }}</p>
+      </div>
+      <div>
         <button
           *ngIf="selectedFeature && canAddFeature"
           (click)="onAddFeature(selectedFeature)"
@@ -22,13 +36,23 @@
           Clear list
         </button>
       </div>
+      <!-- 0ayer in creation  -->
+      <div *ngIf="overlayInCreation">
+        <h3>Overlay in creation</h3>
+        <p>Name: <input type="text" [(ngModel)]="overlayName" /></p>
+        <p>Overlay: {{ overlayName | titlecase }}</p>
+        {{ overlayInCreation?.features | json }}
+        <br />
+      </div>
     </div>
     <app-map
       class="map"
       [config]="config"
       [overlays]="overlays$ | async"
-      [baseLayers]="baselayers$ | async"
+      [baselayers]="baselayers$ | async"
+      [mode]="MODE"
       (selected)="featureSelected($event)"
+      (creating)="layerCreation($event)"
     ></app-map>
   </mat-sidenav-content>
 </mat-sidenav-container>

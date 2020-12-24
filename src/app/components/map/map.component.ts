@@ -6,12 +6,24 @@ import {
   Input,
   OnChanges,
   Output,
+  SimpleChanges,
 } from '@angular/core';
-import { circle, geoJSON, LatLng, Layer, layerGroup, Map } from 'leaflet';
+import {
+  circle,
+  control,
+  DrawEvents,
+  featureGroup,
+  FeatureGroup,
+  geoJSON,
+  LatLng,
+  Layer,
+  layerGroup,
+  Map,
+} from 'leaflet';
 import 'leaflet.smoothwheelzoom';
 import { setDefaultStyleOfFeature } from 'src/app/utils';
 import { Overlay } from '../../model/shared.model';
-import { BaseLayer, Config } from './../../model/shared.model';
+import { BaseLayer, Config, Mode } from './../../model/shared.model';
 import { PopupContentComponent } from './../popup-content/popup-content.component';
 
 @Component({
@@ -21,12 +33,37 @@ import { PopupContentComponent } from './../popup-content/popup-content.componen
 })
 export class MapComponent implements OnChanges {
   @Input() overlays: Overlay[];
-  @Input() baseLayers: BaseLayer[];
+  @Input() baselayers: BaseLayer[];
   @Input() config: Config;
+  @Input() mode: Mode;
   @Output() selected = new EventEmitter<GeoJSON.Feature>();
+  @Output() creating = new EventEmitter<Overlay>();
   featureSelected: GeoJSON.Feature;
   map: Map;
   layers: Layer[];
+  drawItems: FeatureGroup = featureGroup();
+
+  drawOptions = {
+    position: 'topleft',
+    draw: {
+      polyline: true,
+      circle: {
+        shapeOptions: {
+          color: '#d4af37',
+        },
+      },
+      polygon: {
+        shapeOptions: {
+          color: '#666',
+        },
+      },
+      rectangle: false,
+      circlemarker: false,
+      edit: {
+        featureGroup: this.drawItems,
+      },
+    },
+  };
 
   constructor(
     private resolver: ComponentFactoryResolver,
@@ -35,11 +72,23 @@ export class MapComponent implements OnChanges {
 
   onMapReady(map: Map): void {
     this.map = map;
+    if (this.map && this.overlays && this.baselayers) {
+      this.layers = this.loadOverlaysAndAddControl(this.overlays);
+    }
   }
 
-  ngOnChanges(): void {
-    if (this.map && this.overlays && this.baseLayers) {
-      this.layers = this.loadOverlaysAndAddControl(this.overlays);
+  ngOnChanges(changes: SimpleChanges): void {
+    for (const propName in changes) {
+      if (changes.hasOwnProperty(propName)) {
+        switch (propName) {
+          case 'baselayers':
+          case 'overlays':
+            if (this.map && this.overlays && this.baselayers) {
+              this.layers = this.loadOverlaysAndAddControl(this.overlays);
+            }
+            break;
+        }
+      }
     }
   }
 
@@ -51,6 +100,36 @@ export class MapComponent implements OnChanges {
     return { zoom, center };
   }
 
+  onDrawCreated(e: DrawEvents.Created): void {
+    this.drawItems.addLayer(e.layer);
+    const geojson = this.drawItems.toGeoJSON();
+    console.log(e.layer);
+
+    e.layer.bindPopup(
+      `<table>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+        </tr>
+      </table>`,
+      {
+        offset: [0, -10],
+        maxHeight: 200,
+        autoPan: false,
+      }
+    );
+
+    this.creating.emit(geojson as Overlay);
+  }
+
+  /// private method
+
   private loadOverlaysAndAddControl(os: Overlay[]): Layer[] {
     let overlays = {};
 
@@ -59,6 +138,8 @@ export class MapComponent implements OnChanges {
       overlays = { ...overlays, [layer.name]: group };
       return group.addLayer(this.generateLayerGroup(layer));
     });
+
+    control.layers(null, overlays).addTo(this.map);
 
     return Object.values(overlays);
   }
