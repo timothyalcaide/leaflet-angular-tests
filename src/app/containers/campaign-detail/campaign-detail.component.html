@@ -1,17 +1,34 @@
 <mat-sidenav-container hasBackdrop="false">
-  <mat-sidenav
-    mode="side"
-    position="end"
-    [opened]="!!propertiesList && propertiesList.length > 0"
-  >
-    {{ propertiesList | json }}
+  <mat-sidenav mode="side" position="end" [opened]="false">
+    sidenav content
   </mat-sidenav>
   <mat-sidenav-content>
+    <div class="infos">
+      <div class="feature">
+        <h3>Feature</h3>
+        <ul>
+          <li>Selected: {{ selectedFeature?.properties | json }}</li>
+          <li>List length: {{ featureList.length }}</li>
+        </ul>
+      </div>
+      <div class="actions">
+        <button
+          *ngIf="selectedFeature && canAddFeature"
+          (click)="onAddFeature(selectedFeature)"
+        >
+          Add feature
+        </button>
+        <button *ngIf="featureList.length > 0" (click)="onClearFeatureList()">
+          Clear list
+        </button>
+      </div>
+    </div>
     <app-map
+      class="map"
       [config]="config"
       [overlays]="overlays$ | async"
       [baseLayers]="baselayers$ | async"
-      (selected)="onFeature($event)"
+      (selected)="featureSelected($event)"
     ></app-map>
   </mat-sidenav-content>
 </mat-sidenav-container>

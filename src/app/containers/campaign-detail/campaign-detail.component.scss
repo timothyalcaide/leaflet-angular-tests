@@ -9,3 +9,18 @@ mat-sidenav {
   max-width: 400px;
   padding: 1.5rem;
 }
+
+mat-sidenav-content {
+  display: flex;
+}
+
+.map {
+  width: 75%;
+  height: calc(100vh);
+}
+
+.infos {
+  width: 25%;
+  height: calc(100vh);
+  padding: 1.5rem;
+}

@@ -3,7 +3,7 @@
     "id": 1,
     "config": {
       "layers": {
-        "urlTemplate": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
+        "urlTemplate": "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
         "options": {
           "tileSize": 512,
           "zoomOffset": -1,
@@ -23,7 +23,7 @@
     "id": 2,
     "config": {
       "layers": {
-        "urlTemplate": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlTemplate": "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
         "options": {
           "maxZoom": 19
         }
@@ -32,7 +32,7 @@
       "center": { "lat": 44.6898431722, "lng": 5.2119667947 },
       "boxZoom": false
     },
-    "overlayIds": ["1"],
+    "overlayIds": ["2", "3"],
     "baseLayerIds": ["1", "2"]
   },
   "3": {

@@ -40,7 +40,6 @@ export class MapComponent implements OnChanges {
   ngOnChanges(): void {
     if (this.map && this.overlays && this.baseLayers) {
       this.layers = this.loadOverlaysAndAddControl(this.overlays);
-      console.log(this.layers);
     }
   }
 
@@ -75,12 +74,24 @@ export class MapComponent implements OnChanges {
     };
 
     const highlightFeature = (e) => {
-      e.target.setStyle({
-        weight: 8,
-        fillColor: '#FF000',
-        color: '#666',
-        fillOpacity: 0.6,
-      });
+      const featureSyle = e.target.feature.properties.style;
+      if (featureSyle && Object.keys(featureSyle).includes('radius')) {
+        e.target.setStyle({
+          radius: featureSyle.radius * 1.2,
+          fillColor: featureSyle.fillColor,
+          color: featureSyle.color,
+          fillOpacity: featureSyle.opacity * 0.5,
+        });
+      } else if (featureSyle) {
+        e.target.setStyle({
+          weight: featureSyle.weight * 2,
+          fillColor: featureSyle.fillColor,
+          color: featureSyle.color,
+          fillOpacity: featureSyle.opacity * 0.5,
+        });
+      } else {
+        return;
+      }
     };
 
     const resetHighlight = (e) => {

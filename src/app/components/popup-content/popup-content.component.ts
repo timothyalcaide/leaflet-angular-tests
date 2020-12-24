@@ -19,9 +19,4 @@ export class PopupContentComponent implements OnInit {
       )
     );
   }
-
-  onClick(): void {
-    this.add.emit(this.feature);
-    console.log('TODO: add feature t the propertit list tab');
-  }
 }

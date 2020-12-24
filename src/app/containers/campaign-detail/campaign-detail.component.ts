@@ -19,11 +19,14 @@ import { convertConfigToLeaflet } from '../../utils/leaflet.utils';
 export class CampaignDetailComponent implements OnInit {
   overlays$: Observable<Overlay[]>;
   baselayers$: Observable<BaseLayer[]>;
-  propertiesList: any[]; // TODO model (enum)
   selectedFeature: GeoJSON.Feature;
   campaign: Campaign;
   mapSmall: MapSmall;
   config: Config;
+  canAddFeature = true;
+
+  /////
+  featureList: any[];
 
   constructor(
     private service: ApiService,
@@ -32,6 +35,7 @@ export class CampaignDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.featureList = [];
     this.campaign = this.route.snapshot.data.campaign;
     this.mapSmall = this.route.snapshot.data.mapSmall;
     const conf = convertConfigToLeaflet(this.mapSmall.config);
@@ -46,14 +50,24 @@ export class CampaignDetailComponent implements OnInit {
 
     this.overlays$ = this.service.getOverlays(this.mapSmall.overlayIds);
     this.baselayers$ = this.service.getBaselayers(this.mapSmall.baseLayerIds);
-
-    this.propertiesList = [];
   }
 
-  onFeature(feature: GeoJSON.Feature): void {
+  featureSelected(feature: GeoJSON.Feature): void {
     this.selectedFeature = feature;
-    // TODO add to feature list if click button tooltip
-    this.propertiesList = [...this.propertiesList, feature];
+    this.canAddFeature = true;
+    this.cdr.detectChanges();
+  }
+
+  onAddFeature(feature: GeoJSON.Feature): void {
+    if (this.canAddFeature) {
+      this.featureList.push(feature);
+      this.canAddFeature = false;
+      this.cdr.detectChanges();
+    }
+  }
+
+  onClearFeatureList(): void {
+    this.featureList = [];
     this.cdr.detectChanges();
   }
 }
