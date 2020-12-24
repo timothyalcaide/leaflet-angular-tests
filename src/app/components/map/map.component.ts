@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { circle, geoJSON, LatLng, Layer, layerGroup, Map } from 'leaflet';
 import 'leaflet.smoothwheelzoom';
+import { setDefaultStyleOfFeature } from 'src/app/utils';
 import { Overlay } from '../../model/shared.model';
-import { setSectionColor } from '../../utils/';
 import { BaseLayer, Config } from './../../model/shared.model';
 import { PopupContentComponent } from './../popup-content/popup-content.component';
 
@@ -136,7 +136,11 @@ export class MapComponent implements OnChanges {
         component.instance.feature = feature;
         component.changeDetectorRef.detectChanges();
         const popupContent = component.location.nativeElement;
-        l.bindPopup(popupContent, { offset: [0, -10] });
+        l.bindPopup(popupContent, {
+          offset: [0, -10],
+          maxHeight: 200,
+          autoPan: false,
+        });
       }
     };
 
@@ -146,29 +150,7 @@ export class MapComponent implements OnChanges {
       } else {
         // Load default style
         const type = feature.geometry.type;
-        const prop = feature.properties;
-        // TODO : set default style
-        switch (type) {
-          case 'Point':
-          case 'MultiPoint':
-            break;
-          case 'LineString':
-            if (prop.type === 'SECTION') {
-              return setSectionColor(prop.stateNote);
-            }
-            break;
-          case 'MultiLineString':
-            return {
-              color: '#ff7800',
-              weight: 5,
-              opacity: 0.65,
-              lineCap: 'round',
-              lineJoin: 'round',
-            };
-          case 'Polygon':
-          case 'MultiPolygon':
-            break;
-        }
+        setDefaultStyleOfFeature(type);
       }
     };
 
